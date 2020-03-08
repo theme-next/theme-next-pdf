@@ -4,7 +4,7 @@
 
 This is a plugin that allows to preview PDF files in the blog pages.
 
-It's based on PDFObject and PDF.js. If the browser supports embedded PDFs natively, PDFObject will create a `<embed>` tag and include the PDF file on your website. Otherwise it will create a `<iframe>` tag and uses PDF.js to render the pdf file.
+If the browser supports embedded PDFs natively, NexT will create a `<embed>` tag and include the PDF file on your website. Otherwise it will create a `<iframe>` tag and uses PDF.js by @mozilla to render the pdf file.
 
 Follow the guide below to install dependencies.
 
@@ -33,20 +33,14 @@ $ git clone https://github.com/theme-next/theme-next-pdf source/lib/pdf
 Enable module in **NexT** `_config.yml` file:
 
 ```yml
-# PDF tag, requires two plugins: pdfObject and pdf.js
-# pdfObject will try to load pdf files natively, if failed, pdf.js will be used.
-# The following `cdn` setting is only for pdfObject, because cdn for pdf.js might be blocked by CORS policy.
-# So, YOU MUST install the dependency of pdf.js if you want to use pdf tag and make it work on all browsers.
+# PDF tag
+# NexT will try to load pdf files natively, if failed, pdf.js will be used.
+# So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
 # See: https://github.com/theme-next/theme-next-pdf
 pdf:
   enable: true
   # Default height
   height: 500px
-  pdfobject:
-    # Use 2.1.1 as default, jsdelivr as default CDN, works everywhere even in China
-    cdn: //cdn.jsdelivr.net/npm/pdfobject@2.1.1/pdfobject.min.js
-    # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js
 ```
 
 <h1 align="center">Usage</h1>
